@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Phone, Menu, X } from 'lucide-react'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -11,6 +12,29 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    setMobileOpen(false)
+
+    const scrollToSection = () => {
+      const id = href.replace('#', '')
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+
+    if (location.pathname !== '/') {
+      navigate('/')
+      // Wait for home page to mount then scroll
+      setTimeout(scrollToSection, 100)
+    } else {
+      scrollToSection()
+    }
+  }, [navigate, location.pathname])
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/90 backdrop-blur-md" role="navigation" aria-label="Main navigation">
@@ -36,6 +60,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-sm font-semibold text-primary hover:text-accent transition-colors"
               >
                 {link.label}
@@ -73,7 +98,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className="block text-sm font-semibold text-primary hover:text-accent transition-colors"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, link.href)}
                 >
                   {link.label}
                 </a>
