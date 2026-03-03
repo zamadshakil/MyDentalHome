@@ -3,7 +3,7 @@ import { ArrowRight, Phone, Star } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 lg:py-24">
+    <section className="relative overflow-hidden bg-white py-16 lg:py-24" aria-label="Welcome to My Dental Home">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -14,27 +14,28 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Now Accepting New Patients in Lahore
+              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+              Now Accepting New Patients in Bahria Town, Lahore
             </div>
 
             <h1 className="text-5xl lg:text-7xl font-black text-primary leading-[1.1] mb-6">
-              Experience The <span className="text-accent">Best</span> Dental Care
+              Your Smile Deserves The <span className="text-accent">Best</span> Care
             </h1>
 
             <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl">
-              Where luxury meets clinical excellence. Bespoke dental treatments using state-of-the-art technology.
+              Where luxury meets clinical excellence. Bespoke treatments — from dental implants to Hollywood smiles — using state-of-the-art technology by Dr. Faraz Sadiq.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
+                href="#contact"
                 className="bg-primary text-white px-8 py-4 rounded-xl font-bold flex items-center gap-3 hover:shadow-xl transition-all group cursor-pointer"
               >
-                <span>Book Your Consultation</span>
+                <span>Book Free Consultation</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.a>
 
               <motion.a
                 whileHover={{ scale: 1.03 }}
@@ -81,28 +82,30 @@ export default function Hero() {
             <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
 
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5]">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl aspect-4/5">
               {/* Background image */}
               <img
-                src="/images/Dr. Faraz Sadiq.png"
-                alt="Dr. Faraz Sadiq at My Dental Home"
+                src="/images/Clinic.jpg"
+                alt="My Dental Home — premium dental clinic interior in Bahria Town, Lahore"
                 className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                fetchPriority="high"
               />
-              {/* Dark blur overlay for text readability */}
-              <div className="absolute inset-0 bg-primary/70 backdrop-blur-sm" />
+              {/* Dark overlay for text readability while keeping clinic visible */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-primary/50 to-primary/40" />
 
               {/* Text content on top */}
-              <div className="relative w-full h-full flex flex-col items-center justify-center p-10 text-center z-10">
-                <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center mb-8 border border-accent/30">
+              <div className="relative w-full h-full flex flex-col items-center justify-center p-10 text-center z-10 text-shadow-hero">
+                <div className="w-24 h-24 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-8 border border-accent/40 shadow-lg">
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c5a059" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 5.5C10.5 4 7.5 4 6 5.5S4 9 5.5 10.5L12 17l6.5-6.5C20 9 20 7 18 5.5S13.5 4 12 5.5z" />
                     <line x1="12" y1="17" x2="12" y2="22" />
                   </svg>
                 </div>
-                <h3 className="text-white text-2xl font-black tracking-tight mb-2">MY DENTAL HOME</h3>
-                <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-6">Premium Care</p>
-                <div className="w-16 h-px bg-accent/40 mb-6" />
-                <p className="text-white/80 text-sm max-w-xs">State-of-the-art technology combined with personalized care in a serene environment</p>
+                <h3 className="text-white text-3xl font-black tracking-tight mb-2 drop-shadow-lg">MY DENTAL HOME</h3>
+                <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-6 drop-shadow-md">Premium Care</p>
+                <div className="w-16 h-px bg-accent/60 mb-6" />
+                <p className="text-white text-sm max-w-xs font-medium drop-shadow-md">Precision dentistry meets personalized luxury — your comfort is our commitment</p>
               </div>
 
               {/* Glass overlay at bottom */}

@@ -33,7 +33,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-500 max-w-sm">
-              Dedicated to providing the highest standard of dental care with a personalized touch. Your oral health and aesthetic comfort are our top priorities.
+              Dedicated to providing Lahore's highest standard of dental care with a personalized, gentle touch. Your oral health and aesthetic confidence are our top priorities.
             </p>
           </div>
 

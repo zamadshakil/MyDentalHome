@@ -8,7 +8,7 @@ const fadeInUp = {
 
 export default function Specialist() {
   return (
-    <section id="about" className="py-20 bg-bg-light">
+    <section id="about" className="py-20 bg-bg-light" aria-label="About Dr. Faraz Sadiq">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           {/* Portrait Visual */}
@@ -20,14 +20,15 @@ export default function Specialist() {
             variants={fadeInUp}
           >
             <div className="relative group">
-              <div className="absolute inset-0 gold-gradient rounded-[2rem] rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-primary flex flex-col items-center justify-center text-center p-8">
+              <div className="absolute inset-0 gold-gradient rounded-4xl rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition-transform duration-500" />
+              <div className="relative aspect-square rounded-4xl overflow-hidden bg-primary flex flex-col items-center justify-center text-center p-8">
                 {/* Doctor photo in circle */}
                 <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-accent/30 mb-6">
                   <img
                     src="/images/Dr. Faraz Sadiq.png"
-                    alt="Dr. Faraz Sadiq - Lead Specialist & Founder"
+                    alt="Dr. Faraz Sadiq — Lead Dental Specialist and Founder of My Dental Home, Bahria Town Lahore"
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <h3 className="text-white text-3xl font-black mb-2">Dr. Faraz Sadiq</h3>
@@ -60,9 +61,11 @@ export default function Specialist() {
             <h2 className="text-4xl font-black text-primary mb-6">Meet Dr. Faraz Sadiq</h2>
             <p className="text-xl text-primary font-semibold mb-6">Lead Specialist &amp; Founder</p>
             <p className="text-slate-600 mb-8 text-lg leading-relaxed">
-              With years of expertise in advanced restorative and cosmetic dentistry, Dr. Faraz Sadiq has
-              established "My Dental Home" as a sanctuary for those seeking world-class oral care. His
-              philosophy blends clinical precision with an artistic eye for aesthetics.
+              With years of hands-on expertise in advanced restorative and cosmetic dentistry, Dr. Faraz Sadiq has
+              built <strong>My Dental Home</strong> into Bahria Town's most trusted dental practice. His philosophy
+              blends clinical precision with an artistic eye — ensuring every patient leaves with a healthier,
+              more confident smile. From complex implant surgeries to delicate veneer placements, his commitment
+              to excellence is evident in every procedure.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-10">

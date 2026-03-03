@@ -12,8 +12,8 @@ function App() {
     <div className="bg-bg-light text-slate-900 font-display">
       <Navbar />
       <Hero />
-      <Specialist />
       <Services />
+      <Specialist />
       <Results />
       <Contact />
       <Footer />

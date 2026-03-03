@@ -113,7 +113,7 @@ const specialties: SpecialtyItem[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-white" aria-label="Our Dental Services">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -124,9 +124,9 @@ export default function Services() {
           transition={{ duration: 0.6 }}
         >
           <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">What We Offer</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-primary mb-4">World-Class Services</h2>
+          <h2 className="text-4xl lg:text-5xl font-black text-primary mb-4">Comprehensive Dental Services</h2>
           <p className="text-slate-500 max-w-2xl mx-auto text-lg">
-            Comprehensive dental care powered by modern technology and a gentle, patient-first approach.
+            From preventive care to advanced cosmetic procedures — everything you need under one roof, powered by modern technology and a gentle, patient-first approach.
           </p>
         </motion.div>
 
@@ -151,16 +151,17 @@ export default function Services() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="relative overflow-hidden rounded-xl sm:rounded-2xl aspect-[3/4] sm:aspect-[3/4] text-white cursor-pointer group"
+              className="relative overflow-hidden rounded-xl sm:rounded-2xl aspect-3/4 sm:aspect-3/4 text-white cursor-pointer group"
             >
               {/* Background image */}
               <img
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} treatment at My Dental Home, Lahore`}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
               />
               {/* Strong dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/20" />
 
               {/* Content pinned to bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 z-10">

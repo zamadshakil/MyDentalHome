@@ -4,24 +4,24 @@ import { Instagram, Facebook } from 'lucide-react'
 const transformations = [
   {
     title: 'Full Mouth Reconstruction',
-    subtitle: 'Complete cosmetic smile makeover',
+    subtitle: 'Complete cosmetic smile makeover restoring function and beauty',
     image: '/images/FullMouthRestorationResized.jpg',
   },
   {
     title: 'Porcelain Veneers',
-    subtitle: 'Natural looking aesthetic enhancement',
+    subtitle: 'Ultra-thin shells for a naturally flawless smile transformation',
     image: '/images/Porcelain Veneers.webp',
   },
   {
     title: 'Invisalign Treatment',
-    subtitle: 'Discreet orthodontic straightening',
+    subtitle: 'Crystal-clear aligners for discreet orthodontic straightening',
     image: '/images/Invisalign Treatment.jpg',
   },
 ]
 
 export default function Results() {
   return (
-    <section id="results" className="py-24 bg-primary text-white overflow-hidden">
+    <section id="results" className="py-24 bg-primary text-white overflow-hidden" aria-label="Patient Results and Transformations">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -32,9 +32,9 @@ export default function Results() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-left">
-            <h2 className="text-4xl font-black mb-4">Real Stories, Real Results</h2>
+            <h2 className="text-4xl font-black mb-4">Real Patients, Real Transformations</h2>
             <p className="text-slate-300 max-w-xl text-lg">
-              See the life-changing transformations we've performed for our valued patients.
+              Discover the life-changing smile makeovers we've crafted for our valued patients at My Dental Home.
             </p>
           </div>
           <div className="flex gap-4">
@@ -42,6 +42,7 @@ export default function Results() {
               href="https://www.instagram.com/drfarazsadiq/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow Dr. Faraz Sadiq on Instagram"
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
             >
               <Instagram size={22} />
@@ -50,6 +51,7 @@ export default function Results() {
               href="https://www.facebook.com/p/My-Dental-Home-61572385924724/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit My Dental Home on Facebook"
               className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-primary transition-all"
             >
               <Facebook size={22} />
@@ -66,17 +68,18 @@ export default function Results() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative group aspect-[4/5] rounded-3xl overflow-hidden cursor-pointer"
+              className="relative group aspect-4/5 rounded-3xl overflow-hidden cursor-pointer"
             >
               {/* Result image */}
               <img
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title} — before and after result at My Dental Home`}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
               />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                 <div>
                   <p className="font-bold text-lg">{item.title}</p>
                   <p className="text-sm text-slate-300">{item.subtitle}</p>
