@@ -9,6 +9,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import WhatsAppWidget from './components/WhatsAppWidget'
 
 /* Scroll to top on route change for sub-pages */
 function ScrollToTop() {
@@ -39,6 +40,7 @@ function App() {
   return (
     <div className="bg-bg-light text-slate-900 font-display antialiased overflow-x-hidden">
       <ScrollToTop />
+      <WhatsAppWidget />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
