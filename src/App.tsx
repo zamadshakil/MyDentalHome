@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Specialist from './components/Specialist'
@@ -9,15 +10,26 @@ import Footer from './components/Footer'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
 
+/* Scroll to top on route change for sub-pages */
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
+  }, [pathname])
+  return null
+}
+
 function HomePage() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Services />
-      <Specialist />
-      <Results />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <Services />
+        <Specialist />
+        <Results />
+        <Contact />
+      </main>
       <Footer />
     </>
   )
@@ -25,7 +37,8 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="bg-bg-light text-slate-900 font-display">
+    <div className="bg-bg-light text-slate-900 font-display antialiased">
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />

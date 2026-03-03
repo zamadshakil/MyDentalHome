@@ -113,45 +113,46 @@ const specialties: SpecialtyItem[] = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white" aria-label="Our Dental Services">
+    <section id="services" className="py-16 sm:py-24 bg-white" aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-accent font-bold tracking-widest uppercase text-sm mb-4 block">What We Offer</span>
-          <h2 className="text-4xl lg:text-5xl font-black text-primary mb-4">Comprehensive Dental Services</h2>
-          <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+          <span className="text-accent font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">What We Offer</span>
+          <h2 id="services-heading" className="text-2xl sm:text-4xl lg:text-5xl font-black text-primary mb-3 sm:mb-4">Comprehensive Dental Services</h2>
+          <p className="text-slate-500 max-w-2xl mx-auto text-sm sm:text-lg">
             From preventive care to advanced cosmetic procedures — everything you need under one roof, powered by modern technology and a gentle, patient-first approach.
           </p>
         </motion.div>
 
         {/* ── Featured Specialties (top) ── */}
         <motion.div
-          className="text-center mb-10"
+          className="text-center mb-6 sm:mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-2xl font-black text-primary">Our Signature Specialties</h3>
-          <p className="text-slate-400 mt-2">Treatments we're known for</p>
+          <h3 className="text-xl sm:text-2xl font-black text-primary">Our Signature Specialties</h3>
+          <p className="text-slate-400 mt-1 sm:mt-2 text-sm sm:text-base">Treatments we're known for</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mb-12 sm:mb-20" role="list">
           {specialties.map((item, index) => (
             <motion.div
               key={item.title}
+              role="listitem"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.02 }}
-              className="relative overflow-hidden rounded-xl sm:rounded-2xl aspect-3/4 sm:aspect-3/4 text-white cursor-pointer group"
+              className="relative overflow-hidden rounded-xl sm:rounded-2xl aspect-3/4 text-white cursor-pointer group"
             >
               {/* Background image */}
               <img
@@ -165,33 +166,34 @@ export default function Services() {
 
               {/* Content pinned to bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-5 z-10">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center mb-2 sm:mb-3 border border-white/25">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/20 backdrop-blur-md flex items-center justify-center mb-1.5 sm:mb-3 border border-white/25" aria-hidden="true">
                   {item.icon}
                 </div>
-                <h4 className="text-sm sm:text-base font-bold leading-tight mb-0.5">{item.title}</h4>
-                <p className="text-[11px] sm:text-xs text-white/70 leading-snug">{item.subtitle}</p>
+                <h4 className="text-xs sm:text-base font-bold leading-tight mb-0.5">{item.title}</h4>
+                <p className="text-[10px] sm:text-xs text-white/70 leading-snug">{item.subtitle}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* ── Main Services Grid ── */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" role="list">
           {mainServices.map((service, index) => (
             <motion.div
               key={service.title}
+              role="listitem"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: (index % 4) * 0.08 }}
               whileHover={{ y: -6, boxShadow: '0 20px 40px -12px rgba(0, 45, 91, 0.12)' }}
-              className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white transition-all group cursor-pointer"
+              className="p-5 sm:p-6 rounded-xl sm:rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white transition-all group cursor-pointer"
             >
-              <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/5 rounded-xl flex items-center justify-center text-primary mb-3 sm:mb-4 group-hover:bg-primary group-hover:text-white transition-colors" aria-hidden="true">
                 {service.icon}
               </div>
-              <h3 className="text-base font-bold text-primary mb-2">{service.title}</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">{service.description}</p>
+              <h3 className="text-sm sm:text-base font-bold text-primary mb-1.5 sm:mb-2">{service.title}</h3>
+              <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{service.description}</p>
             </motion.div>
           ))}
         </div>
