@@ -26,13 +26,13 @@ export default function Specialist() {
                 <div className="w-28 h-28 sm:w-36 sm:h-36 lg:w-40 lg:h-40 shrink-0 rounded-full overflow-hidden border-4 border-accent/30 mb-5 sm:mb-6">
                   <img
                     src="/images/Dr. Faraz Sadiq.png"
-                    alt="Dr. Faraz Sadiq — Lead Dental Specialist and Founder of My Dental Home, Bahria Town Lahore"
+                    alt="Dr. Faraz Sadiq — Principal Dentist and Clinical Director at My Dental Home, Bahria Town Lahore"
                     className="w-full h-full object-cover aspect-square"
                     loading="lazy"
                   />
                 </div>
                 <h3 className="text-white text-2xl sm:text-3xl font-black mb-2">Dr. Faraz Sadiq</h3>
-                <p className="text-accent font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4">Lead Specialist & Founder</p>
+                <p className="text-accent font-semibold tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4">Principal Dentist & Clinical Director</p>
                 <div className="w-16 h-px bg-accent/40 mb-3 sm:mb-4" aria-hidden="true" />
                 <p className="text-white/50 text-xs sm:text-sm max-w-sm">
                   Advanced Restorative & Cosmetic Dentistry
@@ -59,7 +59,7 @@ export default function Specialist() {
           >
             <span className="text-accent font-bold tracking-widest uppercase text-xs sm:text-sm mb-3 sm:mb-4 block">The Specialist</span>
             <h2 id="specialist-heading" className="text-2xl sm:text-4xl font-black text-primary mb-4 sm:mb-6">Meet Dr. Faraz Sadiq</h2>
-            <p className="text-lg sm:text-xl text-primary font-semibold mb-4 sm:mb-6">Lead Specialist &amp; Founder</p>
+            <p className="text-lg sm:text-xl text-primary font-semibold mb-4 sm:mb-6">Principal Dentist &amp; Clinical Director</p>
             <p className="text-slate-600 mb-6 sm:mb-8 text-sm sm:text-lg leading-relaxed">
               With years of hands-on expertise in advanced restorative and cosmetic dentistry, Dr. Faraz Sadiq has
               built <strong>My Dental Home</strong> into Bahria Town's most trusted dental practice. His philosophy
