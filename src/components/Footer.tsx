@@ -22,12 +22,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-              <div className="p-1.5 sm:p-2 bg-primary rounded-lg text-white flex items-center justify-center" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="sm:w-5.5 sm:h-5.5">
-                  <path d="M12 5.5C10.5 4 7.5 4 6 5.5S4 9 5.5 10.5L12 17l6.5-6.5C20 9 20 7 18 5.5S13.5 4 12 5.5z" />
-                  <line x1="12" y1="17" x2="12" y2="22" />
-                </svg>
-              </div>
+              <img
+                src="/images/My Dental Home - Logo.jpg"
+                alt="My Dental Home logo"
+                className="h-10 sm:h-12 w-auto rounded-lg"
+              />
               <div className="flex flex-col">
                 <span className="text-lg sm:text-xl font-bold tracking-tight text-primary uppercase">My Dental Home</span>
                 <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-accent font-semibold uppercase">Dr. Faraz Sadiq</span>
