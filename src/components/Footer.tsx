@@ -1,4 +1,5 @@
 import { Instagram, Facebook, Linkedin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const quickLinks = [
   { label: 'Our Services', href: '#services' },
@@ -17,9 +18,9 @@ export default function Footer() {
   return (
     <footer className="bg-white border-t border-slate-200 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-16">
           {/* Brand */}
-          <div className="col-span-2">
+          <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 bg-primary rounded-lg text-white flex items-center justify-center">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,7 +55,7 @@ export default function Footer() {
           {/* Follow Us */}
           <div>
             <h4 className="font-bold text-primary mb-6">Follow Us</h4>
-            <div className="flex gap-4">
+            <div className="flex sm:flex-col md:flex-row gap-4">
               {socials.map((s) => (
                 <a
                   key={s.label}
@@ -76,8 +77,10 @@ export default function Footer() {
           <p className="text-slate-400 text-sm text-center md:text-left">
             © {new Date().getFullYear()} My Dental Home by Dr. Faraz Sadiq. All rights reserved.
           </p>
-          <div className="flex gap-6 text-slate-400 text-sm font-medium">
-            <span>Bahria Town, Lahore</span>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-slate-400 text-sm font-medium">
+            <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-primary transition-colors">Terms of Service</Link>
+            <span className="hidden sm:inline">Bahria Town, Lahore</span>
             <a href="tel:03278149889" className="hover:text-primary transition-colors">0327 8149889</a>
           </div>
         </div>

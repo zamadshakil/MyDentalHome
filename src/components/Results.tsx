@@ -78,11 +78,11 @@ export default function Results() {
                 loading="lazy"
               />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+              {/* Overlay — always visible on mobile, hover-only on desktop */}
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6 sm:p-8">
                 <div>
-                  <p className="font-bold text-lg">{item.title}</p>
-                  <p className="text-sm text-slate-300">{item.subtitle}</p>
+                  <p className="font-bold text-base sm:text-lg">{item.title}</p>
+                  <p className="text-xs sm:text-sm text-slate-300">{item.subtitle}</p>
                 </div>
               </div>
             </motion.div>

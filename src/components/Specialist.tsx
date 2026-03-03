@@ -21,13 +21,13 @@ export default function Specialist() {
           >
             <div className="relative group">
               <div className="absolute inset-0 gold-gradient rounded-4xl rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition-transform duration-500" />
-              <div className="relative aspect-square rounded-4xl overflow-hidden bg-primary flex flex-col items-center justify-center text-center p-8">
+              <div className="relative rounded-4xl overflow-hidden bg-primary flex flex-col items-center justify-center text-center py-10 px-6 sm:p-8 lg:aspect-square">
                 {/* Doctor photo in circle */}
-                <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-accent/30 mb-6">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 shrink-0 rounded-full overflow-hidden border-4 border-accent/30 mb-6">
                   <img
                     src="/images/Dr. Faraz Sadiq.png"
                     alt="Dr. Faraz Sadiq — Lead Dental Specialist and Founder of My Dental Home, Bahria Town Lahore"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover aspect-square"
                     loading="lazy"
                   />
                 </div>

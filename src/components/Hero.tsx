@@ -94,24 +94,24 @@ export default function Hero() {
               {/* Dark overlay for text readability while keeping clinic visible */}
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-primary/50 to-primary/40" />
 
-              {/* Text content on top */}
-              <div className="relative w-full h-full flex flex-col items-center justify-center p-10 text-center z-10 text-shadow-hero">
-                <div className="w-24 h-24 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-8 border border-accent/40 shadow-lg">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c5a059" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Text content on top — pushed up to avoid overlapping bottom card */}
+              <div className="relative w-full flex-1 flex flex-col items-center justify-center px-6 pt-6 pb-28 text-center z-10 text-shadow-hero">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/15 backdrop-blur-md flex items-center justify-center mb-4 sm:mb-6 border border-accent/40 shadow-lg">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a059" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 5.5C10.5 4 7.5 4 6 5.5S4 9 5.5 10.5L12 17l6.5-6.5C20 9 20 7 18 5.5S13.5 4 12 5.5z" />
                     <line x1="12" y1="17" x2="12" y2="22" />
                   </svg>
                 </div>
-                <h3 className="text-white text-3xl font-black tracking-tight mb-2 drop-shadow-lg">MY DENTAL HOME</h3>
-                <p className="text-accent text-sm font-semibold tracking-widest uppercase mb-6 drop-shadow-md">Premium Care</p>
-                <div className="w-16 h-px bg-accent/60 mb-6" />
-                <p className="text-white text-sm max-w-xs font-medium drop-shadow-md">Precision dentistry meets personalized luxury — your comfort is our commitment</p>
+                <h3 className="text-white text-2xl sm:text-3xl font-black tracking-tight mb-1 drop-shadow-lg">MY DENTAL HOME</h3>
+                <p className="text-accent text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3 sm:mb-4 drop-shadow-md">Premium Care</p>
+                <div className="w-12 h-px bg-accent/60 mb-3 sm:mb-4" />
+                <p className="text-white text-xs sm:text-sm max-w-xs font-medium drop-shadow-md">Precision dentistry meets personalized luxury — your comfort is our commitment</p>
               </div>
 
               {/* Glass overlay at bottom */}
-              <div className="absolute bottom-6 left-6 right-6 glass-effect p-6 rounded-2xl border border-white/20">
-                <p className="text-primary font-bold">Premium Clinic Facility</p>
-                <p className="text-slate-600 text-sm">120/A, Commercial Area Sector C, Bahria Town, Lahore</p>
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 glass-effect p-4 sm:p-6 rounded-2xl border border-white/20 z-20">
+                <p className="text-primary font-bold text-sm sm:text-base">Premium Clinic Facility</p>
+                <p className="text-slate-600 text-xs sm:text-sm">120/A, Commercial Area Sector C, Bahria Town, Lahore</p>
               </div>
             </div>
           </motion.div>
