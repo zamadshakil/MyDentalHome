@@ -19,20 +19,23 @@ export default function Navbar() {
     e.preventDefault()
     setMobileOpen(false)
 
+    const id = href.replace('#', '')
+
     const scrollToSection = () => {
-      const id = href.replace('#', '')
       const el = document.getElementById(id)
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth' })
+        const navHeight = 80
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight
+        window.scrollTo({ top, behavior: 'smooth' })
       }
     }
 
     if (location.pathname !== '/') {
       navigate('/')
-      // Wait for home page to mount then scroll
-      setTimeout(scrollToSection, 100)
+      setTimeout(scrollToSection, 300)
     } else {
-      scrollToSection()
+      // Delay scroll so mobile menu close animation doesn't block it
+      setTimeout(scrollToSection, 350)
     }
   }, [navigate, location.pathname])
 

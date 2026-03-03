@@ -42,68 +42,150 @@
     <meta name="geo.position" content="31.35;74.19" />
     <meta name="ICBM" content="31.35, 74.19" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD: Primary Business Schema (Dentist + MedicalClinic + LocalBusiness) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Dentist",
+      "@type": ["Dentist", "MedicalClinic", "LocalBusiness"],
+      "@id": "https://mydentalhome.pk/#organization",
       "name": "My Dental Home",
       "alternateName": "My Dental Home by Dr. Faraz Sadiq",
       "url": "https://mydentalhome.pk",
-      "logo": "https://mydentalhome.pk/favicon.svg",
-      "image": "https://mydentalhome.pk/images/Clinic.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mydentalhome.pk/favicon.svg",
+        "width": 64,
+        "height": 64
+      },
+      "image": [
+        "https://mydentalhome.pk/images/Clinic.jpg",
+        "https://mydentalhome.pk/images/Dr.%20Faraz%20Sadiq.png"
+      ],
       "description": "Premium dental clinic in Bahria Town, Lahore offering dental implants, braces, veneers, root canal, teeth whitening, and cosmetic dentistry by Dr. Faraz Sadiq.",
       "telephone": "+923278149889",
       "email": "info@mydentalhome.pk",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "120/A, Commercial Area Sector C",
-        "addressLocality": "Bahria Town, Lahore",
+        "addressLocality": "Bahria Town",
         "addressRegion": "Punjab",
         "postalCode": "53720",
-        "addressCountry": "PK"
+        "addressCountry": {
+          "@type": "Country",
+          "name": "PK"
+        }
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 31.35,
-        "longitude": 74.19
+        "latitude": 31.3515,
+        "longitude": 74.1925
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-        "opens": "16:00",
-        "closes": "22:00"
-      },
+      "hasMap": "https://www.google.com/maps?cid=2363253482949461356",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "16:00",
+          "closes": "22:00"
+        }
+      ],
+      "openingHours": "Mo-Sa 16:00-22:00",
       "founder": {
         "@type": "Person",
+        "@id": "https://mydentalhome.pk/#dr-faraz",
         "name": "Dr. Faraz Sadiq",
         "jobTitle": "Lead Specialist & Founder",
-        "url": "https://pk.linkedin.com/in/dr-faraz-sadiq-4a3b69263"
+        "url": "https://pk.linkedin.com/in/dr-faraz-sadiq-4a3b69263",
+        "sameAs": [
+          "https://pk.linkedin.com/in/dr-faraz-sadiq-4a3b69263",
+          "https://www.instagram.com/drfarazsadiq/"
+        ],
+        "worksFor": { "@id": "https://mydentalhome.pk/#organization" }
       },
-      "medicalSpecialty": ["Cosmetic Dentistry","Restorative Dentistry","Orthodontics","Implant Dentistry"],
+      "medicalSpecialty": [
+        "Cosmetic Dentistry",
+        "Restorative Dentistry",
+        "Orthodontics",
+        "Implant Dentistry",
+        "Endodontics",
+        "Prosthodontics"
+      ],
       "availableService": [
-        { "@type": "MedicalProcedure", "name": "Dental Implants" },
-        { "@type": "MedicalProcedure", "name": "Braces & Invisible Aligners" },
-        { "@type": "MedicalProcedure", "name": "Porcelain Veneers" },
-        { "@type": "MedicalProcedure", "name": "Root Canal Treatment" },
-        { "@type": "MedicalProcedure", "name": "Teeth Whitening" },
-        { "@type": "MedicalProcedure", "name": "Zirconia Crown" },
-        { "@type": "MedicalProcedure", "name": "Digital Smile Design" },
-        { "@type": "MedicalProcedure", "name": "Hollywood Smile Makeover" },
-        { "@type": "MedicalProcedure", "name": "Scaling & Polishing" },
-        { "@type": "MedicalProcedure", "name": "Wisdom Tooth Surgery" }
+        { "@type": "MedicalProcedure", "name": "Dental Implants", "bodyLocation": "Mouth" },
+        { "@type": "MedicalProcedure", "name": "Braces & Invisible Aligners", "bodyLocation": "Teeth" },
+        { "@type": "MedicalProcedure", "name": "Porcelain Veneers", "bodyLocation": "Teeth" },
+        { "@type": "MedicalProcedure", "name": "Root Canal Treatment", "bodyLocation": "Tooth" },
+        { "@type": "MedicalProcedure", "name": "Teeth Whitening", "bodyLocation": "Teeth" },
+        { "@type": "MedicalProcedure", "name": "Zirconia Crown", "bodyLocation": "Tooth" },
+        { "@type": "MedicalProcedure", "name": "Digital Smile Design", "bodyLocation": "Mouth" },
+        { "@type": "MedicalProcedure", "name": "Hollywood Smile Makeover", "bodyLocation": "Mouth" },
+        { "@type": "MedicalProcedure", "name": "Scaling & Polishing", "bodyLocation": "Teeth" },
+        { "@type": "MedicalProcedure", "name": "Wisdom Tooth Surgery", "bodyLocation": "Tooth" },
+        { "@type": "MedicalProcedure", "name": "Crown & Bridge", "bodyLocation": "Teeth" },
+        { "@type": "MedicalProcedure", "name": "Removable Denture", "bodyLocation": "Mouth" }
+      ],
+      "currenciesAccepted": "PKR",
+      "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
+      "priceRange": "$$",
+      "areaServed": [
+        { "@type": "City", "name": "Lahore" },
+        { "@type": "AdministrativeArea", "name": "Bahria Town, Lahore" }
       ],
       "sameAs": [
         "https://www.instagram.com/drfarazsadiq/",
         "https://www.facebook.com/p/My-Dental-Home-61572385924724/",
         "https://pk.linkedin.com/in/dr-faraz-sadiq-4a3b69263"
       ],
-      "priceRange": "$$",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "500",
         "reviewCount": "500"
-      }
+      },
+      "isAcceptingNewPatients": true,
+      "smokingAllowed": false
+    }
+    </script>
+
+    <!-- JSON-LD: BreadcrumbList for site navigation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mydentalhome.pk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://mydentalhome.pk/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "About Dr. Faraz Sadiq",
+          "item": "https://mydentalhome.pk/#about"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Results",
+          "item": "https://mydentalhome.pk/#results"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Contact",
+          "item": "https://mydentalhome.pk/#contact"
+        }
+      ]
     }
     </script>
 
